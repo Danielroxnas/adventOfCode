@@ -17,7 +17,7 @@ namespace _1
 
             var spiltArray = result.Select(x => x.Split()).ToArray();
 
-            var t = spiltArray.Select(x => x.Select(y => int.Parse(y)));
+            var t = spiltArray.Select(x => x.Select(int.Parse));
 
             var r = t.Select(y => y.Max() - y.Min()).ToArray();
             var l = 0;
@@ -38,8 +38,7 @@ namespace _1
 
             var t = spiltArray.Select(x => x.Select(y => int.Parse(y)));
 
-            var i = t.Select(arr => arr.Select(x => arr.Select(y => (x % y == 0 ? x / y : 0)).Max()).Max() //loop through each arr with each arr and calc 
-    ).Sum();
+            var i = t.Select(arr => arr.Select(x => arr.Select(y => (x % y == 0 ? x / y : 0)).Max()).Max()).Sum();
 
             return i;
 
